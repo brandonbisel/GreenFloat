@@ -323,8 +323,12 @@ namespace GreenFloat.Desktop
             user32Helper.LockAspectRatio(aspectRatio);
 
             var mouseLocation = User32Helper.GetMousePosition();
-            this.Left = mouseLocation.X - (this.Width / 2);
-            this.Top = mouseLocation.Y - (this.Height / 2);
+
+            var transform = PresentationSource.FromVisual(this).CompositionTarget.TransformFromDevice;
+            var mouse = transform.Transform(mouseLocation);
+            
+            this.Left = mouse.X - (this.ActualWidth / 2);
+            this.Top = mouse.Y - (this.ActualHeight / 2);
         }
 
         private void _MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
