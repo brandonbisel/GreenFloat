@@ -1,5 +1,5 @@
 # GreenFloat
-ScreenFloat-like application for Windows, works via Greenshot's "External command Plugin".
+Always-on-top Image viewer - works via Greenshot's "External command Plugin", etc.
 
 ## Setup
 1. Place "GreenFloat.exe" in a known location
